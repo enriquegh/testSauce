@@ -32,7 +32,7 @@ public class Base implements SauceOnDemandSessionIdProvider {
 	/*
 	 * Authentication and TestWatcher are needed to send back to Sauce Labs if
 	 * test was successful
-	 * 
+	 *
 	 * Another method is to make a TestWatcher instance
 	 */
 	SauceOnDemandAuthentication authentication = new SauceOnDemandAuthentication(USERNAME, ACCESS_KEY);
@@ -50,25 +50,26 @@ public class Base implements SauceOnDemandSessionIdProvider {
 
 	};
 
-	
+
 	@Before
 	public void setup() throws MalformedURLException {
-		DesiredCapabilities caps = DesiredCapabilities.chrome();
+		DesiredCapabilities caps = DesiredCapabilities();
 		// caps.setCapability("build", "testBuild2");
+		caps.setBrowserName(System.getenv("SELENIUM_BROWSER"));
+		caps.setVersion(System.getenv("SELENIUM_VERSION"));
+		caps.setCapability(CapabilityType.PLATFORM, System.getenv("SELENIUM_PLATFORM"));
 		caps.setCapability("name", testName);
-		caps.setCapability("platform", "OS X 10.10");
-		caps.setCapability("version", "51.0");
 		driver = new RemoteWebDriver(new URL(URL), caps);
 
 		sessionId = ((RemoteWebDriver) driver).getSessionId().toString();
-		
+
 	}
-	
+
 	@After
 	public void destroy() {
-		
+
 		driver.quit();
-		
+
 	}
 
 	@Override
