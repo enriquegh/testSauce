@@ -12,6 +12,7 @@ import org.junit.rules.TestRule;
 import org.junit.rules.TestWatcher;
 import org.junit.runner.Description;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.remote.CapabilityType;
 import org.openqa.selenium.remote.DesiredCapabilities;
 import org.openqa.selenium.remote.RemoteWebDriver;
 
@@ -53,7 +54,7 @@ public class Base implements SauceOnDemandSessionIdProvider {
 
 	@Before
 	public void setup() throws MalformedURLException {
-		DesiredCapabilities caps = DesiredCapabilities();
+		DesiredCapabilities caps = new DesiredCapabilities();
 		// caps.setCapability("build", "testBuild2");
 		caps.setBrowserName(System.getenv("SELENIUM_BROWSER"));
 		caps.setVersion(System.getenv("SELENIUM_VERSION"));
