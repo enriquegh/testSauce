@@ -3,6 +3,9 @@ package com.saucelabs.enrique.Pages;
 import org.junit.Assert;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.support.ui.ExpectedCondition;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
 
 public class Login {
 	private WebDriver driver;
@@ -28,10 +31,13 @@ public class Login {
 	}
 	
 	public boolean isSuccessMessageDisplayed() {
-		return driver.findElement(successMessage).isDisplayed();
+
+		return (new WebDriverWait(driver, 10))
+					.until(ExpectedConditions.presenceOfElementLocated(successMessage)).isDisplayed();
 	}
 	
 	public boolean isFailureMessageDisplayed() {
-		return driver.findElement(failureMessage).isDisplayed();
+		return (new WebDriverWait(driver, 10))
+				.until(ExpectedConditions.presenceOfElementLocated(failureMessage)).isDisplayed();
 	}
 }
