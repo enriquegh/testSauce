@@ -56,9 +56,9 @@ public class Base implements SauceOnDemandSessionIdProvider {
 	public void setup() throws MalformedURLException {
 		DesiredCapabilities caps = new DesiredCapabilities();
 		// caps.setCapability("build", "testBuild2");
-		caps.setBrowserName(System.getenv("SELENIUM_BROWSER"));
-		caps.setVersion(System.getenv("SELENIUM_VERSION"));
-		caps.setCapability(CapabilityType.PLATFORM, System.getenv("SELENIUM_PLATFORM"));
+		caps.setBrowserName("chrome");
+		caps.setVersion("");
+		caps.setCapability(CapabilityType.PLATFORM, "Windows 7");
 		caps.setCapability("name", testName);
 		driver = new RemoteWebDriver(new URL(URL), caps);
 
