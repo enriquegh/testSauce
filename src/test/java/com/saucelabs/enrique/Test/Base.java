@@ -29,7 +29,7 @@ public class Base implements SauceOnDemandSessionIdProvider {
 
 	public static final String URL = "https://" + USERNAME + ":" + ACCESS_KEY + "@ondemand.saucelabs.com:443/wd/hub";
 	public static final String LOCAL_URL = "http://" + USERNAME + ":" + ACCESS_KEY + "@localhost:4445/wd/hub";
-	
+
 
 	protected String sessionId;
 	private String testName;
@@ -59,9 +59,8 @@ public class Base implements SauceOnDemandSessionIdProvider {
 	@Before
 	public void setup() throws MalformedURLException {
 		DesiredCapabilities caps = new DesiredCapabilities();
-		// caps.setCapability("build", "testBuild2");
 		caps.setBrowserName("chrome");
-		caps.setVersion("");
+		caps.setVersion("50.0");
 		caps.setCapability(CapabilityType.PLATFORM, "Windows 7");
 		caps.setCapability("name", testName);
 		driver = new RemoteWebDriver(new URL(URL), caps);
