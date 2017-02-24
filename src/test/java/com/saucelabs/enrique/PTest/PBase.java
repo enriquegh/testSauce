@@ -27,6 +27,7 @@ public class PBase extends Base {
     private final String browser;
     private final String deviceName;
     private final String deviceOrientation;
+    private final String buildName;
 
     public PBase(String os, String version, String browser, String deviceName, String deviceOrientation) {
 
@@ -36,6 +37,7 @@ public class PBase extends Base {
         this.browser = browser;
         this.deviceName = deviceName;
         this.deviceOrientation = deviceOrientation;
+        this.buildName = System.getenv("BUILD_TAG");
     }
 
 
@@ -44,9 +46,7 @@ public class PBase extends Base {
         LinkedList browsers = new LinkedList();
 
         browsers.add(new String[]{"Windows 7","beta","firefox",null,null});
-        browsers.add(new String[]{"Windows 7","48","firefox",null,null});
-        browsers.add(new String[]{"Windows 7","47","firefox",null,null});
-        browsers.add(new String[]{"Windows 7","46","firefox",null,null});
+
 
         return browsers;
 
@@ -59,7 +59,7 @@ public class PBase extends Base {
         caps.setBrowserName(browser);
         caps.setVersion(version);
         caps.setCapability(CapabilityType.PLATFORM, os);
-        caps.setCapability("build", "java-parallel");
+        if (buildName != null) caps.setCapability("build", buildName);
         if (deviceName != null) caps.setCapability("deviceName", deviceName);
         if (deviceOrientation != null) caps.setCapability("device-orientation", deviceOrientation);
 
