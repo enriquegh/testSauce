@@ -42,12 +42,4 @@ public class PTestTakesTime extends PBase {
         }
 
     }
-
-//    @Test
-//    public void failedTest() {
-////        login = new Login(driver);
-////        login.send("tomsmith", "SuperSecretPassword!sdqwd");
-////        Assert.assertTrue("Message is displayed after providing incorrect credentials", login.isFailureMessageDisplayed());
-//
-//    }
 }
