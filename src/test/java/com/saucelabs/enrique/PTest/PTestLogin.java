@@ -7,9 +7,7 @@ import org.junit.Assert;
 import org.junit.Test;
 import org.junit.experimental.categories.Category;
 
-/**
- * Created by enriquegonzalez on 9/22/16.
- */
+
 public class PTestLogin extends PBase {
 
 
@@ -21,7 +19,6 @@ public class PTestLogin extends PBase {
 
 
     @Test
-    @Category(Shallow.class)
     public void succeededTest() {
 
         login = new Login(driver);
@@ -31,7 +28,6 @@ public class PTestLogin extends PBase {
     }
 
     @Test
-    @Category(Shallow.class)
     public void failedTest() {
         login = new Login(driver);
         login.send("tomsmith", "SuperSecretPassword!sdqwd");
