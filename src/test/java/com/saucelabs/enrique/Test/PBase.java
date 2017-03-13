@@ -96,6 +96,7 @@ public class PBase implements SauceOnDemandSessionIdProvider {
         caps.setBrowserName(browser);
         caps.setVersion(version);
         caps.setCapability(CapabilityType.PLATFORM, os);
+        caps.setCapability("name",testName);
         if (buildName != null) caps.setCapability("build", buildName);
         if (deviceName != null) caps.setCapability("deviceName", deviceName);
         if (deviceOrientation != null) caps.setCapability("device-orientation", deviceOrientation);
