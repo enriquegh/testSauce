@@ -1,8 +1,7 @@
-package com.saucelabs.enrique.PTest;
+package com.saucelabs.enrique.Test;
 
 import com.saucelabs.common.SauceOnDemandAuthentication;
 import com.saucelabs.common.SauceOnDemandSessionIdProvider;
-import com.saucelabs.enrique.Test.Base;
 import com.saucelabs.junit.ConcurrentParameterized;
 import com.saucelabs.junit.SauceOnDemandTestWatcher;
 import org.junit.After;

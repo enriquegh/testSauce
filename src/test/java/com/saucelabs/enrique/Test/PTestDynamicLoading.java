@@ -1,16 +1,12 @@
-package com.saucelabs.enrique.PTest;
+package com.saucelabs.enrique.Test;
 
 import com.saucelabs.enrique.Pages.DynamicLoading;
-import com.saucelabs.enrique.Test.TestDynamicLoading;
-import com.saucelabs.enrique.Test.groups.Deep;
 import org.junit.Assert;
 import org.junit.Test;
-import org.junit.experimental.categories.Category;
 
 /**
  * Created by enriquegonzalez on 9/22/16.
  */
-@Category(Deep.class)
 public class PTestDynamicLoading extends PBase {
 
 

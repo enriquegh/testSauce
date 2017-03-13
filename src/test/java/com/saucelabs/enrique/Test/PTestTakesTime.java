@@ -1,4 +1,4 @@
-package com.saucelabs.enrique.PTest;
+package com.saucelabs.enrique.Test;
 
 import org.junit.Test;
 import org.openqa.selenium.By;

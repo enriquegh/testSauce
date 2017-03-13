@@ -1,11 +1,9 @@
-package com.saucelabs.enrique.PTest;
+package com.saucelabs.enrique.Test;
 
 
 import com.saucelabs.enrique.Pages.Login;
-import com.saucelabs.enrique.Test.groups.Shallow;
 import org.junit.Assert;
 import org.junit.Test;
-import org.junit.experimental.categories.Category;
 
 
 public class PTestLogin extends PBase {
