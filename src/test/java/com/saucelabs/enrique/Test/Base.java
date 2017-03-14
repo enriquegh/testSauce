@@ -19,7 +19,7 @@ public abstract class Base implements SauceOnDemandSessionIdProvider {
     private static final String ACCESS_KEY = System.getenv("SAUCE_ACCESS_KEY");
     static final String SAUCE_URL = String.format("https://%s:%s@ondemand.saucelabs.com:443/wd/hub", USERNAME,ACCESS_KEY);
 
-    private String sessionId;
+    String sessionId;
     final String buildName;
     final String browser;
     String testName;
@@ -55,6 +55,8 @@ public abstract class Base implements SauceOnDemandSessionIdProvider {
 
     @After
     public abstract void destroy();
+
+    public abstract void setSessionId();
 
     @Override
     public String getSessionId() {
