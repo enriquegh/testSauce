@@ -45,6 +45,13 @@ public class SeleniumBase extends Base {
     public void destroy() {
         driver.quit();
     }
+
+    @Override
+    public void setSessionId() {
+        sessionId = driver.getSessionId().toString();
+
+    }
+
     @ConcurrentParameterized.Parameters
     public static LinkedList configOptions() {
         LinkedList<String[]> browsers = new LinkedList<>();
