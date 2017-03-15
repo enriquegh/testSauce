@@ -26,15 +26,6 @@ public abstract class AppiumBase extends Base {
         this.app = app;
     }
 
-    @ConcurrentParameterized.Parameters
-    public static LinkedList configOptions() {
-        LinkedList<String[]> mobileconfig = new LinkedList<>();
-        mobileconfig.add(new String[]{"Android Emulator","Android","5.1","","portrait","1.5.3","sauce-storage:enrique.apk"});
-        mobileconfig.add(new String[]{"Samsung Galaxy S6 Device","Android","6.0","","portrait","1.5.3","sauce-storage:enrique.apk"});
-
-        return mobileconfig;
-    }
-
     DesiredCapabilities setSauceCapabilities() {
         DesiredCapabilities caps = new DesiredCapabilities();
         caps.setCapability("deviceName",deviceName);
