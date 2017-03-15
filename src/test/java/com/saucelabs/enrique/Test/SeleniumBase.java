@@ -14,10 +14,10 @@ public class SeleniumBase extends Base {
 
     private final String platform;
     private final String version;
-    private RemoteWebDriver driver;
+    RemoteWebDriver driver;
 
 
-    public SeleniumBase(String platform, String version, String browser) {
+    SeleniumBase(String platform, String version, String browser) {
         super(browser);
         this.platform = platform;
         this.version = version;
@@ -36,6 +36,7 @@ public class SeleniumBase extends Base {
 
         try {
             driver = new RemoteWebDriver(new URL(SAUCE_URL),caps);
+            setSessionId();
         } catch (MalformedURLException e) {
             e.printStackTrace();
         }
@@ -48,7 +49,8 @@ public class SeleniumBase extends Base {
 
     @Override
     public void setSessionId() {
-        sessionId = driver.getSessionId().toString();
+        sessionId = ((RemoteWebDriver)driver).getSessionId().toString();
+
 
     }
 
@@ -56,6 +58,8 @@ public class SeleniumBase extends Base {
     public static LinkedList configOptions() {
         LinkedList<String[]> browsers = new LinkedList<>();
         browsers.add(new String[]{"Windows 7","beta","chrome"});
+        browsers.add(new String[]{"Windows 7","55","chrome"});
+        browsers.add(new String[]{"Windows 7","50","chrome"});
 
         return browsers;
     }

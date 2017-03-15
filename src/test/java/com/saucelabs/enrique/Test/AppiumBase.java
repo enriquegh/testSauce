@@ -1,8 +1,8 @@
 package com.saucelabs.enrique.Test;
 
 import com.saucelabs.junit.ConcurrentParameterized;
-import io.appium.java_client.AppiumDriver;
-import org.junit.runner.RunWith;
+
+import java.util.LinkedList;
 
 public abstract class AppiumBase extends Base {
 
@@ -21,5 +21,14 @@ public abstract class AppiumBase extends Base {
         this.deviceOrientation = deviceOrientation;
         this.appiumVersion = appiumVersion;
         this.app = app;
+    }
+
+    @ConcurrentParameterized.Parameters
+    public static LinkedList configOptions() {
+        LinkedList<String[]> mobileconfig = new LinkedList<>();
+        mobileconfig.add(new String[]{"Android Emulator","Android","5.1","","portrait","1.5.3","sauce-storage:enrique.apk"});
+        mobileconfig.add(new String[]{"Samsung Galaxy S6 Device","Android","6.0","","portrait","1.5.3","sauce-storage:enrique.apk"});
+
+        return mobileconfig;
     }
 }
