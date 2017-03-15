@@ -2,12 +2,14 @@ package com.saucelabs.enrique.Test;
 
 
 import io.appium.java_client.android.AndroidDriver;
+import org.junit.Ignore;
 import org.openqa.selenium.remote.DesiredCapabilities;
 import org.openqa.selenium.remote.RemoteWebDriver;
 
 import java.net.MalformedURLException;
 import java.net.URL;
 
+@Ignore
 public class AndroidBase extends AppiumBase {
 
     AndroidDriver driver;

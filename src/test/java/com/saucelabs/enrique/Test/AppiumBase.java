@@ -1,9 +1,11 @@
 package com.saucelabs.enrique.Test;
 
 import com.saucelabs.junit.ConcurrentParameterized;
+import org.junit.Ignore;
 
 import java.util.LinkedList;
 
+@Ignore
 public abstract class AppiumBase extends Base {
 
     String appiumVersion;

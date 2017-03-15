@@ -52,7 +52,7 @@
 
             <configuration>
                 <parallel>all</parallel>
-                <threadCount>10</threadCount>
+                <threadCount>100</threadCount>
             </configuration>
         </plugin>
     </plugins>

@@ -1,6 +1,7 @@
 package com.saucelabs.enrique.Test;
 
 import com.saucelabs.junit.ConcurrentParameterized;
+import org.junit.Ignore;
 import org.openqa.selenium.remote.CapabilityType;
 import org.openqa.selenium.remote.DesiredCapabilities;
 import org.openqa.selenium.remote.RemoteWebDriver;
@@ -9,7 +10,7 @@ import java.net.MalformedURLException;
 import java.net.URL;
 import java.util.LinkedList;
 
-
+@Ignore
 public class SeleniumBase extends Base {
 
     private final String platform;

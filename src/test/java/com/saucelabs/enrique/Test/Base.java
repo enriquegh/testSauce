@@ -6,12 +6,14 @@ import com.saucelabs.junit.ConcurrentParameterized;
 import com.saucelabs.junit.SauceOnDemandTestWatcher;
 import org.junit.After;
 import org.junit.Before;
+import org.junit.Ignore;
 import org.junit.Rule;
 import org.junit.rules.TestRule;
 import org.junit.rules.TestWatcher;
 import org.junit.runner.Description;
 import org.junit.runner.RunWith;
 
+@Ignore
 @RunWith(ConcurrentParameterized.class)
 public abstract class Base implements SauceOnDemandSessionIdProvider {
 
