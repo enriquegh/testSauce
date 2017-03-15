@@ -2,18 +2,19 @@ package com.saucelabs.enrique.Test;
 
 import com.saucelabs.junit.ConcurrentParameterized;
 import org.junit.Ignore;
+import org.openqa.selenium.remote.DesiredCapabilities;
 
 import java.util.LinkedList;
 
 @Ignore
 public abstract class AppiumBase extends Base {
 
-    String appiumVersion;
-    String deviceName;
-    String app;
-    String platformName;
-    String platformVersion;
-    String deviceOrientation;
+    private String appiumVersion;
+    private String deviceName;
+    private String app;
+    private String platformName;
+    private String platformVersion;
+    private String deviceOrientation;
 
     AppiumBase(String deviceName, String platformName, String platformVersion, String browser, String deviceOrientation, String appiumVersion, String app) {
         super(browser);
@@ -32,5 +33,22 @@ public abstract class AppiumBase extends Base {
         mobileconfig.add(new String[]{"Samsung Galaxy S6 Device","Android","6.0","","portrait","1.5.3","sauce-storage:enrique.apk"});
 
         return mobileconfig;
+    }
+
+    DesiredCapabilities setSauceCapabilities() {
+        DesiredCapabilities caps = new DesiredCapabilities();
+        caps.setCapability("deviceName",deviceName);
+        caps.setCapability("platformName",platformName);
+        caps.setCapability("platformVersion",platformVersion);
+        caps.setBrowserName(browser);
+        caps.setCapability("deviceOrientation",deviceOrientation);
+        caps.setCapability("appiumVersion",appiumVersion);
+        if (app != null) caps.setCapability("app",app);
+
+        caps.setCapability("name",testName);
+        if (buildName != null) caps.setCapability("build",buildName);
+
+        return caps;
+
     }
 }

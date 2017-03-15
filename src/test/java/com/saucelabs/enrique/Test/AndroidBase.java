@@ -20,17 +20,7 @@ public class AndroidBase extends AppiumBase {
 
     @Override
     public void setup() {
-        DesiredCapabilities caps = new DesiredCapabilities();
-        caps.setCapability("deviceName",deviceName);
-        caps.setCapability("platformName",platformName);
-        caps.setCapability("platformVersion",platformVersion);
-        caps.setBrowserName(browser);
-        caps.setCapability("deviceOrientation",deviceOrientation);
-        caps.setCapability("appiumVersion",appiumVersion);
-        if (app != null) caps.setCapability("app",app);
-
-        caps.setCapability("name",testName);
-        if (buildName != null) caps.setCapability("build",buildName);
+        DesiredCapabilities caps = setSauceCapabilities();
 
         try {
             driver = new AndroidDriver(new URL(SAUCE_URL),caps);
