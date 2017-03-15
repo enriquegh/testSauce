@@ -4,19 +4,13 @@ import com.saucelabs.enrique.Pages.DynamicLoading;
 import org.junit.Assert;
 import org.junit.Test;
 
-/**
- * Created by enriquegonzalez on 9/22/16.
- */
-public class PTestDynamicLoading extends PBase {
-
-
-    public PTestDynamicLoading(String os, String version, String browser, String deviceName, String deviceOrientation) {
-        super(os, version, browser, deviceName, deviceOrientation);
-    }
+public class PTestDynamicLoading extends SeleniumBase {
 
     private DynamicLoading loading;
 
-
+    public PTestDynamicLoading(String platform, String version, String browser) {
+        super(platform, version, browser);
+    }
 
     @Test
     public void checkHiddenElementLoadsTest() {

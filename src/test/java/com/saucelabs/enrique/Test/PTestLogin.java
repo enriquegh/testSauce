@@ -6,14 +6,13 @@ import org.junit.Assert;
 import org.junit.Test;
 
 
-public class PTestLogin extends PBase {
-
-
-    public PTestLogin(String os, String version, String browser, String deviceName, String deviceOrientation) {
-        super(os, version, browser, deviceName, deviceOrientation);
-    }
+public class PTestLogin extends SeleniumBase {
 
     private Login login;
+
+    public PTestLogin(String platform, String version, String browser) {
+        super(platform, version, browser);
+    }
 
 
     @Test

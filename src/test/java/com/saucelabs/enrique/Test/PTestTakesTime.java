@@ -4,15 +4,13 @@ import org.junit.Test;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 
-/**
- * Created by enriquegonzalez on 3/1/17.
- */
-public class PTestTakesTime extends PBase {
+
+public class PTestTakesTime extends SeleniumBase {
 
     private static final int NUM_CYCLES = 10;
 
-    public PTestTakesTime(String os, String version, String browser, String deviceName, String deviceOrientation) {
-        super(os, version, browser, deviceName, deviceOrientation);
+    public PTestTakesTime(String platform, String version, String browser) {
+        super(platform, version, browser);
     }
 
 
