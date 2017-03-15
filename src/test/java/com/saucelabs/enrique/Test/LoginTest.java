@@ -6,11 +6,11 @@ import org.junit.Assert;
 import org.junit.Test;
 
 
-public class PTestLogin extends SeleniumBase {
+public class LoginTest extends SeleniumBase {
 
     private Login login;
 
-    public PTestLogin(String platform, String version, String browser) {
+    public LoginTest(String platform, String version, String browser) {
         super(platform, version, browser);
     }
 

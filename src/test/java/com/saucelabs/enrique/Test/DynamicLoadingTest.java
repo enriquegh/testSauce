@@ -4,11 +4,11 @@ import com.saucelabs.enrique.Pages.DynamicLoading;
 import org.junit.Assert;
 import org.junit.Test;
 
-public class PTestDynamicLoading extends SeleniumBase {
+public class DynamicLoadingTest extends SeleniumBase {
 
     private DynamicLoading loading;
 
-    public PTestDynamicLoading(String platform, String version, String browser) {
+    public DynamicLoadingTest(String platform, String version, String browser) {
         super(platform, version, browser);
     }
 
