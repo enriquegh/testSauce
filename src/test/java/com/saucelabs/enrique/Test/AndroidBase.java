@@ -46,8 +46,9 @@ public class AndroidBase extends AppiumBase {
     @ConcurrentParameterized.Parameters
     public static LinkedList configOptions() {
         LinkedList<String[]> mobileconfig = new LinkedList<>();
-        mobileconfig.add(new String[]{"Android Emulator","Android","5.1","","portrait","1.5.3","sauce-storage:enrique.apk"});
-        mobileconfig.add(new String[]{"Samsung Galaxy S6 Device","Android","6.0","","portrait","1.5.3","sauce-storage:enrique.apk"});
+
+        mobileconfig.add(new String[]{"Android GoogleAPI Emulator","Android","7.0","","portrait","1.6.3","sauce-storage:enrique.apk"});
+
 
         return mobileconfig;
     }
