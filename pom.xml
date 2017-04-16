@@ -53,6 +53,7 @@
             <configuration>
                 <parallel>all</parallel>
                 <threadCount>100</threadCount>
+                <rerunFailingTestsCount>1</rerunFailingTestsCount>
             </configuration>
         </plugin>
     </plugins>
