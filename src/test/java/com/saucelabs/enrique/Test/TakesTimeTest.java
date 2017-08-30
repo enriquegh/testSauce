@@ -9,8 +9,8 @@ public class TakesTimeTest extends SeleniumBase {
 
     private static final int NUM_CYCLES = 10;
 
-    public TakesTimeTest(String platform, String version, String browser) {
-        super(platform, version, browser);
+    public TakesTimeTest(String platform, String version, String browser, String seleniumVersion) {
+        super(platform, version, browser, seleniumVersion);
     }
 
 

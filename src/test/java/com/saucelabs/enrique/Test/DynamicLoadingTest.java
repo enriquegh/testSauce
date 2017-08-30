@@ -8,8 +8,8 @@ public class DynamicLoadingTest extends SeleniumBase {
 
     private DynamicLoading loading;
 
-    public DynamicLoadingTest(String platform, String version, String browser) {
-        super(platform, version, browser);
+    public DynamicLoadingTest(String platform, String version, String browser, String seleniumVersion) {
+        super(platform, version, browser,seleniumVersion);
     }
 
     @Test

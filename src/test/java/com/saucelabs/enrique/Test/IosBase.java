@@ -45,7 +45,6 @@ public class IosBase extends AppiumBase{
     public static LinkedList configOptions() {
         LinkedList<String[]> mobileconfig = new LinkedList<>();
         mobileconfig.add(new String[]{"iPhone Simulator","iOS","9.3","Safari","portrait","1.6.3",null});
-        mobileconfig.add(new String[]{"iPhone 6s Device","iOS","9.3","Safari","portrait","1.5.3",null});
 
         return mobileconfig;
     }

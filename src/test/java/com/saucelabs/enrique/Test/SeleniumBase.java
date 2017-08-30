@@ -15,13 +15,15 @@ public class SeleniumBase extends Base {
 
     private final String platform;
     private final String version;
+    private final String seleniumVersion;
     RemoteWebDriver driver;
 
 
-    SeleniumBase(String platform, String version, String browser) {
+    SeleniumBase(String platform, String version, String browser, String seleniumVersion) {
         super(browser);
         this.platform = platform;
         this.version = version;
+        this.seleniumVersion = seleniumVersion;
 
     }
 
@@ -34,9 +36,17 @@ public class SeleniumBase extends Base {
         caps.setBrowserName(browser);
         caps.setCapability("name",testName);
         if (buildName != null) caps.setCapability("build",buildName);
+        if (seleniumVersion != null) caps.setCapability("seleniumVersion",seleniumVersion);
 
         try {
-            driver = new RemoteWebDriver(new URL(SAUCE_URL),caps);
+            if (useSCRelay) {
+                driver = new RemoteWebDriver(new URL(SC_URL),caps);
+            }
+            else {
+                driver = new RemoteWebDriver(new URL(SAUCE_URL),caps);
+
+
+            }
             setSessionId();
         } catch (MalformedURLException e) {
             e.printStackTrace();

@@ -20,15 +20,18 @@ public abstract class Base implements SauceOnDemandSessionIdProvider {
     private static final String USERNAME = System.getenv("SAUCE_USERNAME");
     private static final String ACCESS_KEY = System.getenv("SAUCE_ACCESS_KEY");
     static final String SAUCE_URL = String.format("https://%s:%s@ondemand.saucelabs.com:443/wd/hub", USERNAME,ACCESS_KEY);
+    static final String SC_URL = String.format("http://%s:%s@127.0.0.1:4445/wd/hub",USERNAME,ACCESS_KEY);
 
     String sessionId;
     final String buildName;
     final String browser;
     String testName;
+    boolean useSCRelay = false;
 
     Base(String browser) {
         this.browser = browser;
         this.buildName = System.getenv("BUILD_TAG");
+        this.useSCRelay = Boolean.parseBoolean(System.getenv("USE_SC"));
     }
 
     /*

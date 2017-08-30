@@ -10,8 +10,8 @@ public class LoginTest extends SeleniumBase {
 
     private Login login;
 
-    public LoginTest(String platform, String version, String browser) {
-        super(platform, version, browser);
+    public LoginTest(String platform, String version, String browser, String seleniumVersion) {
+        super(platform, version, browser,seleniumVersion);
     }
 
 
