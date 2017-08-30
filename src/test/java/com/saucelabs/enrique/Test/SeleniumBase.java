@@ -68,9 +68,9 @@ public class SeleniumBase extends Base {
     @ConcurrentParameterized.Parameters
     public static LinkedList configOptions() {
         LinkedList<String[]> browsers = new LinkedList<>();
-        browsers.add(new String[]{"Windows 7","beta","chrome"});
-        browsers.add(new String[]{"Windows 7","55","chrome"});
-        browsers.add(new String[]{"Windows 7","50","chrome"});
+        browsers.add(new String[]{"Windows 7","beta","chrome",null});
+        browsers.add(new String[]{"Windows 7","55","chrome",null});
+        browsers.add(new String[]{"Windows 7","50","chrome",null});
 
         return browsers;
     }
