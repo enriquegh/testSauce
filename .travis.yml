@@ -1,6 +1,4 @@
 language: java
 jdk:
   - oraclejdk8
-after_script: cat /home/travis/sauce-connect.log
-addons:
-  sauce_connect: false
+script: mvn test
