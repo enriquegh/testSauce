@@ -15,6 +15,7 @@ public abstract class AppiumBase extends Base {
     private String platformName;
     private String platformVersion;
     private String deviceOrientation;
+    static String appName;
 
     AppiumBase(String deviceName, String platformName, String platformVersion, String browser, String deviceOrientation, String appiumVersion, String app) {
         super(browser);
@@ -34,7 +35,10 @@ public abstract class AppiumBase extends Base {
         caps.setBrowserName(browser);
         caps.setCapability("deviceOrientation",deviceOrientation);
         caps.setCapability("appiumVersion",appiumVersion);
-        if (app != null) caps.setCapability("app",app);
+        if (app != null) {
+            caps.setCapability("app",app);
+            appName = app.substring(14); //14 because the app should be "sauce-storage:appName"
+        }
 
         caps.setCapability("name",testName);
         if (buildName != null) caps.setCapability("build",buildName);

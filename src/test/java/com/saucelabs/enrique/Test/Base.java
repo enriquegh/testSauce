@@ -88,7 +88,9 @@ public abstract class Base implements SauceOnDemandSessionIdProvider {
      * @param sauceFileName Name that file will take on Sauce Storage and be accessed as "sauce-storage:sauceFilename"
      * @param filePath Complete filepath where file is located
      */
-    public void uploadFileSauceStorage(String sauceFileName, File filePath) {
+    public static void uploadFileSauceStorage(String sauceFileName, File filePath) {
+
+        //:TODO Check if application is there and make overwrite optional
 
         final String BASE_URL = "https://saucelabs.com/rest/v1/storage/%s/%s?overwrite=true";
 
@@ -117,6 +119,5 @@ public abstract class Base implements SauceOnDemandSessionIdProvider {
         }
 
     }
-
 
 }
