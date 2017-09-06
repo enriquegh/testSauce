@@ -19,7 +19,8 @@ public class TestAndroid extends AndroidBase {
         boolean isContinousIntegration = Boolean.parseBoolean(System.getenv("TRAVIS"));
 
         if (isContinousIntegration) {
-            appFilePath = new File("/home/travis/enrique.apk");
+            String homeDir = System.getenv("TRAVIS_BUILD_DIR");
+            appFilePath = new File(homeDir + "/enrique.apk");
 
         }
         else {
