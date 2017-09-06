@@ -15,7 +15,17 @@ public class TestAndroid extends AndroidBase {
     }
     @BeforeClass
     public static void setupApp() {
-        File appFilePath = new File("/Users/enriquegonzalez/saucelabs/apps/Android/enrique.apk");
+        File appFilePath;
+        boolean isContinousIntegration = Boolean.parseBoolean(System.getenv("TRAVIS"));
+
+        if (isContinousIntegration) {
+            appFilePath = new File("/home/travis/enrique.apk");
+
+        }
+        else {
+            appFilePath = new File("/Users/enriquegonzalez/saucelabs/apps/Android/enrique.apk");
+
+        }
 
         uploadFileSauceStorage(appName,appFilePath);
     }
