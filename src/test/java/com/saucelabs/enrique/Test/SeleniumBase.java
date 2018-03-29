@@ -1,14 +1,19 @@
 package com.saucelabs.enrique.Test;
 
 import com.saucelabs.junit.ConcurrentParameterized;
+import org.json.simple.JSONObject;
 import org.junit.Ignore;
+import org.openqa.selenium.Capabilities;
+import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.remote.CapabilityType;
 import org.openqa.selenium.remote.DesiredCapabilities;
 import org.openqa.selenium.remote.RemoteWebDriver;
 
 import java.net.MalformedURLException;
 import java.net.URL;
+import java.util.LinkedHashMap;
 import java.util.LinkedList;
+import java.util.Map;
 
 @Ignore
 public class SeleniumBase extends Base {
@@ -68,9 +73,53 @@ public class SeleniumBase extends Base {
     @ConcurrentParameterized.Parameters
     public static LinkedList configOptions() {
         LinkedList<String[]> browsers = new LinkedList<>();
-        browsers.add(new String[]{"Windows 7","beta","chrome",null});
-        browsers.add(new String[]{"Windows 7","55","chrome",null});
-        browsers.add(new String[]{"Windows 7","50","chrome",null});
+
+        browsers.add(new String[]{"Windows 7","61.0","chrome",null});
+        browsers.add(new String[]{"Windows 7","61.0","chrome",null});
+        browsers.add(new String[]{"Windows 7","61.0","chrome",null});
+        browsers.add(new String[]{"Windows 7","61.0","chrome",null});
+        browsers.add(new String[]{"Windows 7","61.0","chrome",null});
+        browsers.add(new String[]{"Windows 7","61.0","chrome",null});
+        browsers.add(new String[]{"Windows 7","61.0","chrome",null});
+        browsers.add(new String[]{"Windows 7","61.0","chrome",null});
+        browsers.add(new String[]{"Windows 7","61.0","chrome",null});
+        browsers.add(new String[]{"Windows 7","61.0","chrome",null});
+
+
+        browsers.add(new String[]{"Windows 7","63.0","chrome",null});
+        browsers.add(new String[]{"Windows 7","63.0","chrome",null});
+        browsers.add(new String[]{"Windows 7","63.0","chrome",null});
+        browsers.add(new String[]{"Windows 7","63.0","chrome",null});
+        browsers.add(new String[]{"Windows 7","63.0","chrome",null});
+        browsers.add(new String[]{"Windows 7","63.0","chrome",null});
+        browsers.add(new String[]{"Windows 7","63.0","chrome",null});
+        browsers.add(new String[]{"Windows 7","63.0","chrome",null});
+        browsers.add(new String[]{"Windows 7","63.0","chrome",null});
+        browsers.add(new String[]{"Windows 7","63.0","chrome",null});
+
+        browsers.add(new String[]{"Windows 7","64.0","chrome",null});
+        browsers.add(new String[]{"Windows 7","64.0","chrome",null});
+        browsers.add(new String[]{"Windows 7","64.0","chrome",null});
+        browsers.add(new String[]{"Windows 7","64.0","chrome",null});
+        browsers.add(new String[]{"Windows 7","64.0","chrome",null});
+        browsers.add(new String[]{"Windows 7","64.0","chrome",null});
+        browsers.add(new String[]{"Windows 7","64.0","chrome",null});
+        browsers.add(new String[]{"Windows 7","64.0","chrome",null});
+        browsers.add(new String[]{"Windows 7","64.0","chrome",null});
+        browsers.add(new String[]{"Windows 7","64.0","chrome",null});
+
+        browsers.add(new String[]{"Windows 7","65.0","chrome",null});
+        browsers.add(new String[]{"Windows 7","65.0","chrome",null});
+        browsers.add(new String[]{"Windows 7","65.0","chrome",null});
+        browsers.add(new String[]{"Windows 7","65.0","chrome",null});
+        browsers.add(new String[]{"Windows 7","65.0","chrome",null});
+        browsers.add(new String[]{"Windows 7","65.0","chrome",null});
+        browsers.add(new String[]{"Windows 7","65.0","chrome",null});
+        browsers.add(new String[]{"Windows 7","65.0","chrome",null});
+        browsers.add(new String[]{"Windows 7","65.0","chrome",null});
+        browsers.add(new String[]{"Windows 7","65.0","chrome",null});
+
+
 
         return browsers;
     }

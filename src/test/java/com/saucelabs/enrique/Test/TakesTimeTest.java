@@ -19,25 +19,17 @@ public class TakesTimeTest extends SeleniumBase {
 
         int i = 0;
 
-        driver.get("https://enriquegh.com");
-
-        while (i < NUM_CYCLES) {
-            WebElement header = driver.findElement(By.id("header"));
-            if (!header.isDisplayed()) {
-                driver.findElement(By.xpath("//*[@id=\"titleBar\"]/a")).click();
-            }
-
-
-
-            Thread.sleep(2000);
-            driver.findElement(By.id("two-link")).click();
-
-            driver.get("https://enriquegh.com");
-            Thread.sleep(2000);
-
-            i++;
-
-        }
+        driver.get("https://google.com");
 
     }
+
+//    @Test
+//    public void clickTest2() throws InterruptedException {
+//
+//        int i = 0;
+//
+//        driver.get("http://photobucket.com/");
+//
+//    }
+
 }
