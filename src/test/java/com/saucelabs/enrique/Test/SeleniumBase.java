@@ -118,6 +118,17 @@ public class SeleniumBase extends Base {
         browsers.add(new String[]{"Windows 7","65.0","chrome",null});
         browsers.add(new String[]{"Windows 7","65.0","chrome",null});
         browsers.add(new String[]{"Windows 7","65.0","chrome",null});
+        
+        browsers.add(new String[]{"Windows 7","68.0","chrome",null});
+        browsers.add(new String[]{"Windows 7","68.0","chrome",null});
+        browsers.add(new String[]{"Windows 7","68.0","chrome",null});
+        browsers.add(new String[]{"Windows 7","68.0","chrome",null});
+        browsers.add(new String[]{"Windows 7","68.0","chrome",null});
+        browsers.add(new String[]{"Windows 7","68.0","chrome",null});
+        browsers.add(new String[]{"Windows 7","68.0","chrome",null});
+        browsers.add(new String[]{"Windows 7","68.0","chrome",null});
+        browsers.add(new String[]{"Windows 7","68.0","chrome",null});
+        browsers.add(new String[]{"Windows 7","68.0","chrome",null});
 
 
 
