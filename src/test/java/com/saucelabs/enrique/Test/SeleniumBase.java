@@ -2,6 +2,7 @@ package com.saucelabs.enrique.Test;
 
 import com.saucelabs.junit.ConcurrentParameterized;
 import org.json.simple.JSONObject;
+import org.junit.BeforeClass;
 import org.junit.Ignore;
 import org.openqa.selenium.Capabilities;
 import org.openqa.selenium.chrome.ChromeOptions;
@@ -134,4 +135,8 @@ public class SeleniumBase extends Base {
 
         return browsers;
     }
+
+
+
+
 }

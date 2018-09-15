@@ -16,10 +16,7 @@ import org.apache.http.impl.client.BasicCredentialsProvider;
 import org.apache.http.impl.client.CloseableHttpClient;
 import org.apache.http.impl.client.HttpClients;
 import org.apache.http.util.EntityUtils;
-import org.junit.After;
-import org.junit.Before;
-import org.junit.Ignore;
-import org.junit.Rule;
+import org.junit.*;
 import org.junit.rules.TestRule;
 import org.junit.rules.TestWatcher;
 import org.junit.runner.Description;
@@ -38,14 +35,14 @@ public abstract class Base implements SauceOnDemandSessionIdProvider {
     static final String SC_URL = String.format("http://%s:%s@127.0.0.1:4445/wd/hub",USERNAME,ACCESS_KEY);
 
     String sessionId;
-    final String buildName;
+    static String buildName;
     final String browser;
     String testName;
     boolean useSCRelay = false;
 
     Base(String browser) {
         this.browser = browser;
-        this.buildName = System.getenv("BUILD_TAG");
+//        this.buildName = System.getenv("BUILD_TAG");
         this.useSCRelay = Boolean.parseBoolean(System.getenv("USE_SC"));
     }
 
@@ -118,6 +115,14 @@ public abstract class Base implements SauceOnDemandSessionIdProvider {
             e.printStackTrace();
         }
 
+    }
+
+    @BeforeClass
+    public static void setupClass() {
+        buildName = System.getenv("BUILD_TAG");
+        if (buildName == null) {
+            buildName = System.getenv("SAUCE_BUILD_NAME");
+        }
     }
 
 }
